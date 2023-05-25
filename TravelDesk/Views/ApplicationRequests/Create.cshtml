@@ -1,0 +1,93 @@
+﻿@model TravelDesk.Models.ApplicationRequest
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ApplicationRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentId" class="control-label"></label>
+                <select asp-for="DepartmentId" class ="form-control" asp-items="ViewBag.DepartmentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentId" class="control-label"></label>
+                <select asp-for="DocumentId" class ="form-control" asp-items="ViewBag.DocumentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReasonForTravelling" class="control-label"></label>
+                <input asp-for="ReasonForTravelling" class="form-control" />
+                <span asp-validation-for="ReasonForTravelling" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureCity" class="control-label"></label>
+                <input asp-for="DepartureCity" class="form-control" />
+                <span asp-validation-for="DepartureCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinationCity" class="control-label"></label>
+                <input asp-for="DestinationCity" class="form-control" />
+                <span asp-validation-for="DestinationCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureDate" class="control-label"></label>
+                <input asp-for="DepartureDate" class="form-control" />
+                <span asp-validation-for="DepartureDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurationOfTravel" class="control-label"></label>
+                <input asp-for="DurationOfTravel" class="form-control" />
+                <span asp-validation-for="DurationOfTravel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelRequired" class="control-label"></label>
+                <input asp-for="HotelRequired" class="form-control" />
+                <span asp-validation-for="HotelRequired" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelId" class="control-label"></label>
+                <select asp-for="HotelId" class ="form-control" asp-items="ViewBag.HotelId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealNeeded" class="control-label"></label>
+                <input asp-for="MealNeeded" class="form-control" />
+                <span asp-validation-for="MealNeeded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelModel" class="control-label"></label>
+                <select asp-for="TravelModel" class="form-control"></select>
+                <span asp-validation-for="TravelModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentId" class="control-label"></label>
+                <select asp-for="CommentId" class ="form-control" asp-items="ViewBag.CommentId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
